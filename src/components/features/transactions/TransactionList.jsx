@@ -1,120 +1,72 @@
 import React from 'react'
+import { DataGrid } from '@mui/x-data-grid'
 import { transactions } from '@/utils/dummydata'
-import {useReactTable} from '@tanstack/react-table'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-
-
-
-// {
-//     "id": "408b792dcabf4be793e1f7513049c7",
-//     "amount": 7256.2,
-//     "currency": "NGN",
-//     "status": "Pending",
-//     "transactionType": "Transfer to GTBank Account",
-//     "recipient": {
-//         "name": "JOHN DOE",
-//         "accountNumber": "4390277244",
-//         "bank": "GTBank"
-//     },
-//     "paymentMethod": "OWealth",
-//     "transactionDate": "2025-03-09 11:31:18",
-//     "category": "Airtime & Data",
-//     "actions": {
-//         "dispute": false,
-//         "shareReceipt": true,
-//         "transferAgain": true,
-//         "viewRecords": true
-//     }
-// },
-
+import { getStatusClasses, formatCurrency } from '@/utils/format';
 const columns = [
-    {
-        Header: 'Amount',
-        accessor: 'amount'
-    },
-    {
-        Header: 'Currency',
-        accessor: 'currency'
-    },
-    {
-        Header: 'Status',
-        accessor: 'status'
-    },
-    {
-        Header: 'Transaction Type',
-        accessor: 'transactionType'
-    },
-    {
-        Header: 'Recipient',
-        accessor: 'recipient'
-    },
-    {
-        Header: 'Payment Method',
-        accessor: 'paymentMethod'
-    },
-    {
-        Header: 'Transaction Date',
-        accessor: 'transactionDate'
-    },
-    {
-        Header: 'Category',
-        accessor: 'category'
-    },
-    {
-        Header: 'Actions',
-        accessor: 'actions'
+    { field: 'id', headerName: 'ID', flex: 1 },
+    { field: 'amount', headerName: 'Amount', flex: 1 },
+    { field: 'currency', headerName: 'Currency', flex: 1 },
+    { field: 'status', headerName: 'Status', flex: 1,
+    renderCell: (params) => {
+        const status = params.row.status;
+        return (
+            <div >
+               <span className={`px-2 py-1 rounded-full text-xs ${getStatusClasses(status)}`}>
+                     {status}
+               </span>
+               
+            </div>
+        );
     }
-
-]
+     },
+    { field: 'transactionType', headerName: 'Transaction Type', flex: 1 },
+    {
+        field: 'recipient',
+        headerName: 'Recipient',
+        flex: 1,
+        renderCell: (params) => {
+            const recipient = params.row.recipient;
+            return (
+                <div>
+                    <p className='capitalize'>{recipient.name} - {recipient.accountNumber}</p>
+                    
+                </div>
+            );
+        }
+    },
+    { field: 'paymentMethod', headerName: 'Payment Method', flex: 1 },
+    { field: 'transactionDate', headerName: 'Transaction Date', flex: 1 },
+    { field: 'category', headerName: 'Category', flex: 1 },
+    {
+        field: 'actions',
+        headerName: 'Actions',
+        flex: 1,
+        renderCell: (params) => {
+            const actions = params.row.actions;
+            return (
+                <div>
+                    {actions.dispute && <button>Dispute</button>}
+                    {actions.shareReceipt && <button>Share Receipt</button>}
+                    {actions.transferAgain && <button>Transfer Again</button>}
+                    {actions.viewRecords && <button>View Records</button>}
+                </div>
+            );
+        }
+    }
+];
 
 const TransactionList = () => {
-    const data = React.useMemo(() => transactions, []);
-    const columns = React.useMemo(() => columns, []);
-
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow
-    } = useReactTable({
-        columns,
-        data
-    })
-
-  return (
-    <div>
-        <Table {...getTableProps()}>
-            <TableHead>
-            {headerGroups.map(headerGroup => (
-                <TableRow {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map(column => (
-                    <TableHeader {...column.getHeaderProps()}>
-                    {column.render('Header')}
-                    </TableHeader>
-                ))}
-                </TableRow>
-            ))}
-            </TableHead>
-            <TableBody {...getTableBodyProps()}>
-            {rows.map(row => {
-                prepareRow(row)
-                return (
-                <TableRow {...row.getRowProps()}>
-                    {row.cells.map(cell => {
-                    return (
-                        <TableCell {...cell.getCellProps()}>
-                        {cell.render('Cell')}
-                        </TableCell>
-                    )
-                    })}
-                </TableRow>
-                )
-            })}
-            </TableBody>
-        </Table>
-    </div>
-  )
+    return (
+        <div style={{ height: '100%', width: '100%' }}>
+            <DataGrid
+                rows={transactions}
+                columns={columns}
+                pageSize={10}
+                getRowId={(row) => row.id} 
+                disableSelectionOnClick
+            />
+        </div>
+    )
 }
 
 export default TransactionList

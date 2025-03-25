@@ -13,6 +13,9 @@ body {
   font-family: var(--font-display) !important;
   /* color: var(--color-foreground); */
 }
+.css-1mweokt-MuiDataGrid-root {
+  font-family: var(--font-body) !important;
+}
 
 /* custom scrollbar with the theme color */
 ::-webkit-scrollbar {

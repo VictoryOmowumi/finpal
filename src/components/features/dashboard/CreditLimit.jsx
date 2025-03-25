@@ -33,8 +33,8 @@ const CreditLimit = () => {
     return (
         <Card className="flex flex-col border-none flex-1/3 max-h-72 shadow-none p-1 ">
             <div className="items-center pb-0">
-            <h2 className="text-lg font-semibold text-black">Account Limit</h2>
-                <p className="text-gray-500">A comparison of your credit limit and online limit</p>
+            <h2 className="text-lg font-semibold text-slate-800 dark:text-slate-200">Account Limit</h2>
+                <p className="text-slate-400">A comparison of your credit limit and online limit</p>
             </div>
             
             <CardContent className="flex-1 pb-0">

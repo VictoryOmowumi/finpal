@@ -38,7 +38,7 @@ const IncomeChart = () => {
     return (
         <Card className="border-none">
             <CardHeader>
-                <h2 className="text-lg font-semibold  text-black">Income vs Expenses</h2>
+                <h2 className="text-lg font-semibold  text-slate-800 dark:text-slate-200">Income vs Expenses</h2>
                 <CardDescription className="text-gray-400">
                     A comparison of your income and expenses for the last 12 months
                 </CardDescription>

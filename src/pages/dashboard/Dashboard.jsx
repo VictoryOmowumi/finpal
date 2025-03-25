@@ -150,7 +150,7 @@ const Dashboard = () => {
 
         <div className="flex-1/6 bg-purple-100 dark:bg-[#261f3d] p-4 ">
           <div className="flex flex-col gap-5">
-          <h2 className="text-lg font-semibold mb-2 text-black">Quick Actions</h2>
+          <h2 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Quick Actions</h2>
             <div className="flex justify-evenly gap-5 items-start">
               {quickActions.map((action, index) => (
                 <div key={index} className="flex flex-col items-center gap-2 ">
