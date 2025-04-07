@@ -54,7 +54,7 @@ const Dashboard = () => {
     setShowDailyBalance(!showDailyBalance);
   };
   return (
-    <div className='flex w-full h-screen'>
+    <div className='flex flex-wrap w-full h-screen'>
 
       <div className="flex-3/5  flex flex-col gap-4 overflow-y-auto dark:bg-[#171326] no-scrollbar">
         <div className=" bg-[#C7AAFC] flex flex-col justify-between gap-5 space-y-10 p-4"
@@ -69,7 +69,7 @@ const Dashboard = () => {
             <h1 className="text-4xl text-[#171326] font-medium">Welcome back, {userName}</h1>
             <p className="text-[#434243] ml-1">Here's what's happening with your account today</p>
           </div>
-          <div className="flex justify-between space-x-5  ">
+          <div className="flex flex-wrap-reverse md:flex-nowrap gap-4 md:gap-0 justify-between space-x-5  ">
             <div className="flex-1/2  rounded-md h-[180px] bg-[#f5f5f5] flex flex-col justify-between gap-4 p-2">
               <div className="flex justify-between">
                 <img src={mastercardlogo} alt="mastercard logo" className="w-14" />
@@ -97,7 +97,7 @@ const Dashboard = () => {
 
             </div>
             <div className="flex-2/3 flex flex-col justify-between gap-5">
-              <div className="flex justify-between gap-5">
+              <div className="flex flex-wrap justify-between gap-5">
                 <div className="flex flex-col">
                   <p className="text-[#434243] ml-1.5 flex items-center gap-1 cursor-pointer"
                     onClick={toggleTotalBalance}
@@ -151,22 +151,22 @@ const Dashboard = () => {
         <div className="flex-1/6 bg-purple-100 dark:bg-[#261f3d] p-4 ">
           <div className="flex flex-col gap-5">
           <h2 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Quick Actions</h2>
-            <div className="flex justify-evenly gap-5 items-start">
+            <div className="flex justify-evenly overflow-y-auto gap-5 no-scrollbar items-start">
               {quickActions.map((action, index) => (
                 <div key={index} className="flex flex-col items-center gap-2 ">
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <div className="flex items-center justify-center bg-[#C7AAFC] dark:bg-[#c7aafc6e] cursor-pointer w-12 h-12 rounded-full hover:bg-[#c7aafc]">
-                          <action.icon className="w-5 h-5 text-[#070707] dark:text-[#c7aafc] hover:rotate-90 transition-transform duration-300 ease-in-out" />
+                        <div className="flex items-center justify-center bg-[#C7AAFC] hover:text-[#070707] text-[#070707] dark:text-[#c7aafc]  dark:bg-[#c7aafc6e] cursor-pointer w-12 h-12 rounded-full hover:bg-[#c7aafc]">
+                          <action.icon className="w-5 h-5  hover:rotate-90 transition-transform duration-300 ease-in-out" />
                         </div>
                       </TooltipTrigger>
-                      <TooltipContent side="top" className="bg-[#171326] text-[#0d0d0d] dark:text-[#f5f5f5] p-2 rounded-md no-arrow">
+                      <TooltipContent side="top" className="bg-white  dark:bg-[#171326] text-[#0d0d0d] dark:text-[#f5f5f5] p-2 rounded-md no-arrow">
                         {action.description}
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                  <p className="text-[#0d0d0d] dark:text-[#f5f5f5] text-sm font-medium">{action.title}</p>
+                  <p className="text-[#0d0d0d] dark:text-[#f5f5f5] text-sm font-medium text-nowrap">{action.title}</p>
                 </div>
               ))}
             </div>

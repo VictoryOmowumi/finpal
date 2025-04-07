@@ -42,7 +42,7 @@ const Sidebar = () => {
         return location.pathname.startsWith(path);
     };
     return (
-        <div className=' flex flex-col items-center space-y-5 w-16 p-2 sticky top-0 h-screen justify-between'>
+        <div className=' flex flex-col items-center space-y-5 w-16 p-2 sticky top-0 h-screen justify-between print:hidden'>
             <div className="">
                 <img src={theme === 'dark' ? logo : logoLight} alt="logo" />
             </div>

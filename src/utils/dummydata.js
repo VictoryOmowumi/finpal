@@ -169,9 +169,9 @@ export const transactions =[
     },
     {
         "id": "257193bb3c80403383aab3de6a963f",
-        "amount": 11528.64,
+        "amount": 1152800.64,
         "currency": "NGN",
-        "status": "Failed",
+        "status": "Successful",
         "transactionType": "Transfer to Kuda Bank Account",
         "recipient": {
             "name": "FATIMA BELLO",
@@ -180,7 +180,7 @@ export const transactions =[
         },
         "paymentMethod": "USSD",
         "transactionDate": "2025-01-22 11:31:18",
-        "category": "Bills",
+        "category": "Income",
         "actions": {
             "dispute": false,
             "shareReceipt": true,
@@ -417,6 +417,111 @@ export const transactions =[
             "shareReceipt": true,
             "transferAgain": true,
             "viewRecords": true
+        }
+    },
+    {
+        "id": "f3a4b4c8c5e94d7e8f1d0f1b3c1e2d",
+        "amount": 15000,
+        "currency": "NGN",
+        "status": "Successful",
+        "transactionType": "Salary Payment",
+        "recipient": {
+            "name": "ABC Corp",
+            "accountNumber": "1234567890",
+            "bank": "First Bank"
+        },
+        "paymentMethod": "Bank Transfer",
+        "transactionDate": "2025-03-15 11:31:18",
+        "category": "Income",
+        "actions": {
+            "dispute": false,
+            "shareReceipt": true,
+            "transferAgain": true,
+            "viewRecords": true
+        }
+    },
+    {
+        "id": "f3a4b4c8c5e94d7e8f1d0f1b3c1e2e",
+        "amount": 2000000,
+        "currency": "NGN",
+        "status": "Successful",
+        "transactionType": "Freelance Payment",
+        "recipient": {
+            "name": "XYZ Ltd",
+            "accountNumber": "0987654321",
+            "bank": "GTBank"
+        },
+        "paymentMethod": "Debit Card",
+        "transactionDate": "2025-03-16 11:31:18",
+        "category": "Income",
+        "actions": {
+            "dispute": false,
+            "shareReceipt": true,
+            "transferAgain": true,
+            "viewRecords": true
+        }
+    }
+]
+
+export const budgets = [
+    {
+        "id": "1",
+        "category": "Food",
+        "amount": 50000,
+        "currentSpent": 20000,
+        "currency": "NGN",
+        "status": "Active",
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": "2",
+        "category": "Entertainment",
+        "amount": 30000,
+        "currentSpent": 15000,
+        "currency": "NGN",
+        "status": "Active",
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": "3",
+        "category": "Bills",
+        "amount": 60000,
+        "currentSpent": 25000,
+        "currency": "NGN",
+        "status": "Active",
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": "4",
+        "category": "Shopping",
+        "amount": 40000,
+        "currentSpent": 10000,
+        "currency": "NGN",
+        "status": "Active",
+        "actions": {
+            "edit": true,
+            "delete": true
+        }
+    },
+    {
+        "id": "5",
+        "category": "Savings",
+        "amount": 70000,
+        "currentSpent": 30000,
+        "currency": "NGN",
+        "status": "Active",
+        "actions": {
+            "edit": true,
+            "delete": true
         }
     }
 ]

@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/common/Layout';
+import { BudgetProvider } from './context/BudgetContext';
 const Dashboard = lazy(() => import('./pages/dashboard/Dashboard'));
 const Budget = lazy(() => import('./pages/budgetManagement/Budget'));
 const Transactions = lazy(() => import('./pages/transactionsManagement/Transactions'));
@@ -12,7 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path="budget" element={<Budget />} />
+            <Route path="budget" element={<BudgetProvider><Budget /></BudgetProvider>} />
             <Route path="transactions" element={<Transactions />} />
           </Route>
         </Routes>
