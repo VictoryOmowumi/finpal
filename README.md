@@ -1,12 +1,36 @@
-# React + Vite
+# FinPal – Personal Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FinPal is a modern personal finance management dashboard built with **React**, **Vite**, and **Tailwind CSS**. It allows users to track income, expenses, budgets, and analyze financial habits through an intuitive and interactive UI. This project is a personal initiative to explore building user-focused fintech dashboards with clean architecture and data visualization.
 
-Currently, two official plugins are available:
+![FinPal Screenshot](./assets/finpal-dashboard.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 Secure account overview with balance, daily expense, and cashback tracking  
+- 📊 Inflow vs Outflow bar charts for financial trend analysis  
+- 💳 Transaction summary with detailed statuses (successful, pending)  
+- 📅 Monthly performance analytics for income and expenses  
+- 🧮 Budget management with expense categories and remaining balance indicators  
+- 🧾 Spending distribution visualizations with donut charts  
+- ⚡ Fast refresh and optimized dev experience with Vite  
+
+---
+
+## 🛠 Tech Stack
+
+- **React** – Component-based UI  
+- **Vite** – Lightning-fast frontend tooling  
+- **Tailwind CSS** – Utility-first CSS framework  
+- **Chart.js / Recharts** – For visualizations  
+- **Redux Toolkit** *(optional)* – State management  
+- **Custom Hooks** – Reusable logic  
+- **ESLint** – Linting and code quality enforcement  
+
+---
+
+## 📁 Project Structure
+
+- 
+
